@@ -1,27 +1,53 @@
-# Laravel PHP Framework
+# Simple Jigsaw
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Simple Jigsaw is opensource jigsaw game on web platform, the application is backed by Laravel 5.1 and can be easily extended using **Laravel** integration.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Requirements
 
-## Official Documentation
+- PHP >=5.4
+- Fileinfo Extension
+- Intervention Image
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Supported Image Libraries
+
+- GD Library (>=2.0)
+- Imagick PHP extension (>=6.5.7)
+
+## Getting started
+
+- [Installation](http://image.intervention.io/getting_started/installation)
+- [Laravel Framework Integration](http://image.intervention.io/getting_started/installation#laravel)
+- [Basic Usage](http://image.intervention.io/use/basics)
+
+## Code Examples
+
+```php
+// open an image file
+$img = Image::make('public/foo.jpg');
+
+// resize image instance
+$img->resize(320, 240);
+
+// insert a watermark
+$img->insert('public/watermark.png');
+
+// save image in desired format
+$img->save('public/bar.jpg');
+```
+
+Refer to the [official documentation](http://image.intervention.io/) to learn more about Intervention Image.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Contributions to the Intervention Image library are welcome. Please note the following guidelines before submiting your pull request.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+- Follow [PSR-2](http://www.php-fig.org/psr/psr-2/) coding standards.
+- Write tests for new functions and added features
+- API calls should work consistently with both GD and Imagick drivers
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Intervention Image is licensed under the [MIT License](http://opensource.org/licenses/MIT).
+
+Copyright 2017 [Oliver Vogel](http://olivervogel.com/)
