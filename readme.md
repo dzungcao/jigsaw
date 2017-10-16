@@ -2,6 +2,7 @@
 
 Simple Jigsaw is opensource jigsaw game on web platform, the application is backed by Laravel 5.1 and can be easily extended using **Laravel** integration.
 
+Online Demo link: [live demo](http://jigsawpuzzle1.com)
 
 ## Requirements
 
