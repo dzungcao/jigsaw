@@ -49,6 +49,6 @@ Contributions to the Intervention Image library are welcome. Please note the fol
 
 ## License
 
-Intervention Image is licensed under the [MIT License](http://opensource.org/licenses/MIT).
+Simple Jigsaw is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-Copyright 2017 [Oliver Vogel](http://olivervogel.com/)
+Copyright 2017 [Dzung Cao] - dungcaond@gmail.com
