@@ -90,10 +90,16 @@ class CustomPicController extends Controller
                 //$jigsaw_tmpl = 'images/lib/tmpl_center.png';
                 $pieces .= $builder->getElementString($i,$j).'|';
                 if($platform == 'LINUX')
-                    $convert = 'convert '.$gamePath.' -crop 160x160+'.$y.'+'.$x.'\! -background none -flatten +repage '.$jigsaw_tmpl.' -alpha Off -compose CopyOpacity -composite -crop 160x160+0+0 +repage '.$pName;
-                else
-                    $convert = 'magick '.$gamePath.' -crop 160x160+'.$y.'+'.$x.'\! -background none -flatten +repage '.$jigsaw_tmpl.' -alpha Off -compose CopyOpacity -composite -crop 160x160+0+0 +repage '.$pName;
+                    $convert = 'convert '.public_path($gamePath).' -crop 160x160+'.$y.'+'.$x.'\! -background none -flatten +repage '.public_path($jigsaw_tmpl).' -alpha Off -compose CopyOpacity -composite -crop 160x160+0+0 +repage '.public_path($pName);
+                else{
+                    $convert = 'magick '.public_path($gamePath).' -crop 160x160+'.$y.'+'.$x.'\! -background none -flatten +repage '.public_path($jigsaw_tmpl).' -alpha Off -compose CopyOpacity -composite -crop 160x160+0+0 +repage '.public_path($pName);
+
+                    $convert = str_replace('\\', '/', $convert);
+                }
+                //dd("$gamePath - $y - $x - $jigsaw_tmpl - $pName");
+                //dd("$convert");
                 exec($convert);
+                //dd($output);
             }
             $pieces .= '@';
         }
